@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Shopping Cart Web App </title>
 </head>
-<body >
+<body background ="resources/images/imag2.jpg">
 <h1>Shopping cart</h1>
 <hr>
 <jsp:include page="navbar.jsp"></jsp:include>
@@ -16,8 +16,13 @@ ${loginMessage}${errorMessage }<br>
 ${successMessage} 
 <hr>
 <c:if test="${empty loginmessage}">
-<a href= "login">login</a><br>
-<a href= "register">register</a><br></c:if>
+<a href= "login">Login</a><br>
+<a href= "AddUser">Adduser</a><br>
+
+<a href="adminHome">AdminHome</a>
+
+</c:if>
+
 
 <c:if test="${not empty loginmessage}">
 <a href= "logout">logout</a><br>
@@ -26,9 +31,14 @@ ${successMessage}
 <br><br>
 <c:if test="${LoginClicked==true or not empty errorMessage}">
 <jsp:include page="Login.jsp"></jsp:include>
-</c:if>
-<c:if test="${Register==true }">
+</c:if>>
+
+<c:if test="${user==true }">
 <jsp:include page="AddUser.jsp"></jsp:include>
+<hr>
+
+
+<jsp:include page="footer.jsp"></jsp:include>>
 </c:if>
 </body>
 </html>

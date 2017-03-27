@@ -23,7 +23,7 @@ private HttpSession session;
 
 @RequestMapping("/login")
 public ModelAndView showLoginPage() {
-	ModelAndView mv= new ModelAndView("/home");
+	ModelAndView mv= new ModelAndView("/Login");
 	mv.addObject("LoginClicked" ,"true");
 			return mv;
 
@@ -33,7 +33,7 @@ public ModelAndView showLoginPage() {
 
 
 @RequestMapping("/validate")
-public ModelAndView validateCredentials(@RequestParam("userid")String id, @RequestParam("password")String pwd)
+public ModelAndView validateCredentials(@RequestParam("uname")String id, @RequestParam("password")String pwd)
 {
 	ModelAndView mv =new ModelAndView("/home");
 	

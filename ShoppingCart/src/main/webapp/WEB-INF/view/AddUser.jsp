@@ -8,13 +8,13 @@
 <title>Insert User</title>
 </head>
 <body>
-<fm:form action ="adduser"  commandname ="user">
+<fm:form action ="userAdd"  commandname ="user">
 Username<input type="text" name="uname">
-Password:<input type="password" name="Password"><br>
-Contact:<input type="text" name="Contact"><br>
+Password:<input type="password" name="password"><br>
+Contact:<input type="text" name="contact"><br>
 Email:<input type="email" name="email"><br>
-Address:<input type="text"name="address"><br>
-<input type="submit" value="login">
+Address:<input type="text" name="address">
+<input type="submit" value="Submit">
 <input type="reset" value="reset">
 
 </fm:form>

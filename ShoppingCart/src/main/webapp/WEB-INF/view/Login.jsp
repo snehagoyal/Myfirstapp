@@ -9,9 +9,9 @@
 <body>
 <!--  userid= sneha,password=s@123  -->
 <form action="validate" method="post">
-Username:<input type= "text" name="UserId" placeholder ="Enter username">
+Username:<input type= "text" name="uname" placeholder ="Enter username">
 <br>
-Password:<input type="text" name="password" placeholder ="Enter password">
+Password:<input type="password" name="password" placeholder ="Enter password">
 <input type="submit" value ="Login">
 <input type="reset" value="reset">
 </form>
