@@ -24,7 +24,7 @@ public class SupplierController {
 	public void setSupplierService(SupplierService supplierService) {
 	}
 
-	@RequestMapping("/supplier")
+/*	@RequestMapping("/supplier")
 	public ModelAndView showSupplierAdd() {
 		ModelAndView mv = new ModelAndView("/admin/SupplierAdd");
 		mv.addObject("supplieradded", new Supplier());
@@ -50,10 +50,39 @@ public class SupplierController {
 		return mv;
 
 	}
+*/
+	@RequestMapping("/supplier")
+	public ModelAndView showSupplierAdd() {
+		ModelAndView mv = new ModelAndView("/addSupplier");
+		mv.addObject("supplieradded", new Supplier());
+		
+		mv.addObject("supplierList", supplierService.list());
+
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/supplierAdd", method = RequestMethod.POST)
+	public ModelAndView insertSupplier(@ModelAttribute("supplieradded") Supplier s) {
+		
+		ModelAndView mv=new ModelAndView("forward:/supplier");
+		try {
+			System.out.println(s.getId());
+			System.out.println(s.getName());
+			System.out.println(s.getAddress());
+			System.out.println("going to service");
+			this.supplierService.saveSupplier(s);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mv;
+
+	}
 
 	@RequestMapping("/delete_Supplier/{id}")
 	public ModelAndView deleteSupplier(@PathVariable("id") int id, Model model) throws Exception {
-		ModelAndView mv = new ModelAndView("/ admin/SupplierAdd");
+		ModelAndView mv = new ModelAndView("/addSupplier");
 		boolean b = this.supplierService.delete(id);
 		if (b) {
 			System.out.println("delete ho gaya");

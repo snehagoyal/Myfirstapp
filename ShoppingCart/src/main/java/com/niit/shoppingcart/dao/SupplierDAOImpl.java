@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.shoppingcart.model.Supplier;
 
-@Repository("supplierDAO")
+@Repository
 public class SupplierDAOImpl implements SupplierDAO {
 
 SessionFactory sessionFactory;
@@ -17,7 +17,8 @@ SessionFactory sessionFactory;
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	public boolean save(Supplier s) {
+	public boolean saveSupplier(Supplier s) {
+		System.out.println("reached to dao"+s.getName());
 		try{
 			sessionFactory.getCurrentSession().persist(s);
 			return true;
@@ -59,22 +60,24 @@ SessionFactory sessionFactory;
 			}
 
 	}
-	public boolean delete(int s_id)
-	{
-		try{
-			sessionFactory.getCurrentSession().delete(getSupplierByID(s_id));
-			return true;
-			}
-			catch(Exception e)
-			{	System.out.println("Galat Kr Rha hai");
-				e.printStackTrace();
-				return false;
-			}
 
-	}
 	public Supplier getSupplierByID(int id)
 	{		System.out.println("try hard");
 		  return  (Supplier)sessionFactory.getCurrentSession().createQuery("from Supplier where id = '"+id + "'").uniqueResult();
 
 	}
-}
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+try{
+			
+			sessionFactory.getCurrentSession().delete(getSupplierByID(id));
+			return true;
+			}
+			catch(Exception e)
+			{	System.out.println("Galat Kr Rha hai");
+				e.printStackTrace();
+		
+		return false;
+	}
+	}
+	}

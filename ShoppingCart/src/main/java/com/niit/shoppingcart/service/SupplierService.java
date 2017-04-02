@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface SupplierService {
 
-	public boolean save(Supplier s);
+	public boolean saveSupplier(Supplier s);
 	public List<Supplier> list();
 	public boolean update(Supplier s);
 	public boolean delete(Supplier s);

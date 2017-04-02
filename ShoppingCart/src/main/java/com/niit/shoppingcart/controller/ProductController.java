@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
+import com.niit.shoppingcart.service.CategoryService;
 import com.niit.shoppingcart.service.ProductService;
 
 @Controller
@@ -24,16 +25,27 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private CategoryService categoryService;
 
 	@Autowired(required = true)
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}
+	
+	@Autowired(required = true)
+public void setCategoryService(CategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
+
 
 @RequestMapping("/product")
 	public ModelAndView showProductPage() {
 		ModelAndView mv = new ModelAndView("/admin/ProductAdd");
+		mv.addObject("categoryList",categoryService.list());
 		mv.addObject("product", new Product());
+		mv.addObject("productList",productService.list());
 		return mv;
 	}
 		

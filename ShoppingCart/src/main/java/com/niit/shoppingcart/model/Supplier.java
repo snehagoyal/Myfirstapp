@@ -10,10 +10,10 @@ import javax.persistence.Id;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Component
 public class Supplier implements Serializable{
 
 	@Id
+	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	private int id;
 	private String name;
 	private String address;

@@ -7,10 +7,10 @@ import java.util.List;
 
 
 public interface SupplierDAO {
-	public boolean save(Supplier s);
+	public boolean saveSupplier(Supplier s);
 	public List<Supplier> list();
 	public boolean update(Supplier s);
 	public boolean delete(Supplier s);
 	public boolean delete(int id);
-	public Supplier getSupplierByID(int id);
+	public Supplier getSupplierByID( int id);
 }

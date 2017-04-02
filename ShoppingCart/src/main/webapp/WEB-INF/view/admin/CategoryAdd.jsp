@@ -11,18 +11,22 @@
 <title>Category Add</title>
 </head>
 <body>
-	<fm:form action="categoryAdd" commandName="category"
-		modelAttribute="category" method="post">
+	<fm:form action="categoryAdd" commandName="category" modelAttribute="category" method="post">
 		<fieldset>
 			<legend>Category Addition:</legend>
 			Name<br>
-			<fm:input path="name" type="text" name="name"
-				placeholder="Enter name" />
+			<fm:input path="name" type="text" name="name" placeholder="Enter name" />
 			<br> Desc<br>
-			<fm:input path="desc" type="text" name="desc"
-				placeholder="Enter description" />
-			<br> <input type="submit" name="submit" value="submit">
-			<input type="reset" name="reset" value="reset">
+			<fm:input path="desc" type="text" name="desc" placeholder="Enter description" />
+				
+				
+				<c:if test="${empty category.name }">
+					<input type="submit" value="Add brand">
+				</c:if>
+				<c:if test="${not empty category.name }">
+					<input type="submit" value="Edit brand">
+				</c:if>
+			
 		</fieldset>
 	</fm:form>
 	<table border="2">
@@ -32,6 +36,7 @@
 				<td>ID</td>
 				<td>Name</td>
 				<td>Desc</td>
+				
 				<td colspan=2>Action</td>
 			</tr>
 		</thead>

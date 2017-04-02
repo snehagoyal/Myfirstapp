@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Transactional
-@Service
+@Service("")
 public class SupplierServiceImpl implements SupplierService {
 
 	private SupplierDAO supplierDAO;
@@ -24,9 +24,9 @@ public class SupplierServiceImpl implements SupplierService {
 	this.supplierDAO = supplierDAO;
 }
 	
-	public boolean save(Supplier s) {
-		
-			return supplierDAO.save(s);
+	public boolean saveSupplier(Supplier s) {
+		System.out.println("in service"+s.getAddress());
+			return supplierDAO.saveSupplier(s);
 	}
 	public 	List<Supplier> list()
 	{

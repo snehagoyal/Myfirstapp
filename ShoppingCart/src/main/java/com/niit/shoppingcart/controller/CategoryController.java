@@ -33,6 +33,9 @@ public class CategoryController {
 	public ModelAndView showCategoryPage() {
 		ModelAndView mv = new ModelAndView("/admin/CategoryAdd");
 		mv.addObject("category", new Category());
+		mv.addObject("categoryList", categoryService.list());
+			
+	
 		return mv;
 	}
 	
@@ -47,12 +50,17 @@ public class CategoryController {
 	public ModelAndView deleteCategory(@PathVariable("id") int id)throws Exception
 	{
 		ModelAndView mv = new ModelAndView("forward:/Category");
-		boolean b=this.categoryService.delete(id);
-		if(b){
-			System.out.println("delete ho gaya");
-		}
+		this.categoryService.delete(id);
 	    return mv;
 	}	
+	@RequestMapping("/update_Category/{id}")
+	public ModelAndView editCategory(@PathVariable("id") int id)
+	{
+		ModelAndView mv = new ModelAndView("forward:/Category");
+		//this.categoryService.update(c);
+	    return mv;
+	}	
+
 }
 
 
