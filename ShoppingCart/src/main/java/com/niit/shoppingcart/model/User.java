@@ -10,13 +10,23 @@ import javax.persistence.Id;
 @Entity
 public class User implements Serializable {
 
+	
+	private String id;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
 	private String uname;
 	private String email;
 	private String contact;
 	private String password;
+	private boolean active;
+	
+
+	public boolean getActive() {
+		return active;
+	}
+
+	public void setActive(boolean b) {
+		this.active = b;
+	}
 
 	public String getEmail() {
 		return email;
@@ -42,11 +52,11 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

@@ -9,8 +9,7 @@ public interface CategoryDAO {
 	public List<Category> list();
 	public boolean update(Category c);
 	public boolean delete(Category c);
-	public boolean delete(int c_id);
-	public Category getCategoryByID(int c_id);
-	public boolean saveOrUpdate(Category c);
+	public boolean delete(int id);
+	public Category getCategoryByID(int id);
 
 }

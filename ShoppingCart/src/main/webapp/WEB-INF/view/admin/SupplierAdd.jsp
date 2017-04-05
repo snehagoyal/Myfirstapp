@@ -13,20 +13,19 @@
 </head>
 <body>
 	<fm:form action="supplierAdd" commandName="supplieradded" method="post">
-		<!-- <fieldset>
+		 <fieldset>
 			<legend>Supplier Addition:</legend>
-			Id: <fm:input path="id" type="text" name="id"/><br>
+			
+			Id: <fm:input path="id" type="text" name="id" placeholder="id"/>
 			Name<br>
 			<fm:input path="name" type="text" name="name" placeholder="Enter name" />
-			<br> Address<br>
+			<br> 
+			Address<br>
 			<fm:input path="address" type="text" name="address" placeholder="Enter Address" />
 			<br> <input type="submit" value="submit">
-			<input type="reset" name="reset" value="reset">
-		</fieldset> -->
-		<input type="text" name="id">
-		<input type="text" name="name">
-		<input type="text" name="address">
-		<input type="submit">
+			
+		</fieldset> 
+	
 	</fm:form>
 	<table border="2">
 
@@ -49,9 +48,9 @@
 				
 		
 				
-				<td><a href="edit_Supplier/${supplier.id}">Edit</a></td>
+				<td><a href="<c:url value='edit_Supplier/${supplier.id}'/>">Edit</a></td>
 					
-					<td><a href="<c:url value='/delete_Supplier/${supplier.id}' />" >Delete</a></td>
+				<td><a href="<c:url value='/delete_Supplier/${supplier.id}'/>">Delete</a></td>
 
 			</tr>
 		</c:forEach>

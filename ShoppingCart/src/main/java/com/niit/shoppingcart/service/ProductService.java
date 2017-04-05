@@ -10,7 +10,7 @@ public interface ProductService {
 	public List<Product> list();
 	public boolean update(Product p);
 	public boolean delete(Product p);
-	public boolean delete(int p_id);
-	public Product getProductByID(int p_id);
+	public boolean delete( int id);
+	public Product getProductByID(int id);
 
 }

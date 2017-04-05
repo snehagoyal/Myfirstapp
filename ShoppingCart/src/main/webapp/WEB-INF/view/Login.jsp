@@ -13,7 +13,6 @@ Username:<input type= "text" name="uname" placeholder ="Enter username">
 <br>
 Password:<input type="password" name="password" placeholder ="Enter password">
 <input type="submit" value ="Login">
-<input type="reset" value="reset">
 </form>
 </body>
 </html>

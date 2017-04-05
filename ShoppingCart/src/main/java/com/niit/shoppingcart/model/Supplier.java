@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 public class Supplier implements Serializable{
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	private int id;
 	private String name;
 	private String address;
+	
 	public int getId() {
 		return id;
 	}

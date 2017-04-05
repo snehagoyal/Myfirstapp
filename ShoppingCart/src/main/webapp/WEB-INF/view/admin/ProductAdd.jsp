@@ -12,9 +12,13 @@
 <title>Product Add</title>
 </head>
 <body>
-	<fm:form action="productAdd" commandName="product" modelAttribute="product" method="post" enctype="multipart/form-data">
+	<fm:form action="${pageContext.request.contextPath}/productAdd" commandName="product" modelAttribute="product" method="post" enctype="multipart/form-data">
 		<fieldset>
 			<legend>Product Addition:</legend>
+			<c:if test="${not empty product.name }">
+			Id<br>
+			<fm:input path="id" type="text" name="id" placeholder="Enter id" readonly="true" />
+			</c:if>
 			Name<br>
 			<fm:input path="name" type="text" name="name" placeholder="Enter name" />
 			<br>
@@ -54,10 +58,10 @@
 				<td>Name</td>
 				<td>Description</td>
 				<td>Price</td>
-				<td>CategoryName</td>>
+				<td>CategoryName</td>
 				<td colspan=2>Action</td>
 			</tr>
-		</thead>_
+		</thead>
 
 		<c:forEach var="product" items="${productList}">
 			<tr>
@@ -67,7 +71,7 @@
 				<td>${product.desc}</td>
 				<td>${product.price}</td>
                 <td>${product.categoryid}</td>
-				<td><a href="product_edit/${product.id}">Edit</a></td>
+				<td><a href="edit_product/${product.id}">Edit</a></td>
 
 				<td><a href="<c:url value='/delete_Product/${product.id}' />">Delete</a></td>
 

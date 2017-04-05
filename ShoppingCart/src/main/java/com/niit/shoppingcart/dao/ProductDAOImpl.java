@@ -74,8 +74,8 @@ public class ProductDAOImpl implements ProductDAO {
 
 	}
 	public Product getProductByID(int id)
-	{		System.out.println("Thori or kosish kr");
-		  return  (Product)sessionFactory.getCurrentSession().createQuery("from Product where id = '"+id + "'").uniqueResult();
+	{		
+		  return  (Product)sessionFactory.getCurrentSession().createQuery("from Product where id = "+id).uniqueResult();
 
 	}
 

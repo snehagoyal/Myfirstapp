@@ -25,7 +25,7 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
-	
+
 	@Autowired
 	private CategoryService categoryService;
 
@@ -33,58 +33,67 @@ public class ProductController {
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}
-	
+
 	@Autowired(required = true)
-public void setCategoryService(CategoryService categoryService) {
+	public void setCategoryService(CategoryService categoryService) {
 		this.categoryService = categoryService;
 	}
 
-
-@RequestMapping("/product")
+	@RequestMapping("/product")
 	public ModelAndView showProductPage() {
 		ModelAndView mv = new ModelAndView("/admin/ProductAdd");
-		mv.addObject("categoryList",categoryService.list());
+		mv.addObject("categoryList", categoryService.list());
 		mv.addObject("product", new Product());
-		mv.addObject("productList",productService.list());
+		mv.addObject("productList", productService.list());
 		return mv;
 	}
-		
-@RequestMapping("/productAdd") 
-	public String insertProduct(@Valid @ModelAttribute("product") Product p, BindingResult result , Model model, HttpServletRequest request ){
 
-		model.addAttribute("productList",productService.list());
-		System.out.println("product");
-		
-		if(p.getId()==0)
-		{
+	@RequestMapping("/productAdd")
+	public String insertProduct(@ModelAttribute("product") Product p, BindingResult result, Model model,
+			HttpServletRequest request) {
+
+		model.addAttribute("productList", productService.list());
+		System.out.println(" in product");
+
+		if (p.getId() == 0) {
 			this.productService.save(p);
-				MultipartFile file = p.getImg();
-				String filelocation = request.getSession().getServletContext().getRealPath("/resources/images/");
-				System.out.println(filelocation);
-				String filename = filelocation + "\\" + p.getId() + ".jpg";
-				System.out.println(filename);
-				try {
-					byte b[] = file.getBytes();
-					FileOutputStream fos = new FileOutputStream(filename);
-					fos.write(b);
-					fos.close();
-				} catch (Exception e) {
-				}
+			System.out.println("in product save method");
+			MultipartFile file = p.getImg();
+			String filelocation = request.getSession().getServletContext().getRealPath("/resources/images/");
+			System.out.println(filelocation);
+			String filename = filelocation + "\\" + p.getId() + ".jpg";
+			System.out.println(filename);
+			try {
+				byte b[] = file.getBytes();
+				FileOutputStream fos = new FileOutputStream(filename);
+				fos.write(b);
+				fos.close();
+			} catch (Exception e) {
+			}
+		} else {
+			System.out.println("in product update method");
+			this.productService.update(p);
 		}
-	
+
 		return "/admin/ProductAdd";
+
 	}
-	
+
 	@RequestMapping("/delete_Product/{id}")
-	public ModelAndView deleteProduct(@PathVariable("id") int id)
-	{
-		ModelAndView mv = new ModelAndView("/admin/ProductAdd");
-		boolean b=this.productService.delete(id);
-		if(b){
-			System.out.println("delete ho gaya");
-		}
-	    return mv;
-	}	
+	public String deleteProduct(@PathVariable("id") int id) {
+		this.productService.delete(id);
+		return "redirect:/product";
+	}
+
+	@RequestMapping("/edit_product/{id}")
+	public String editProduct(@PathVariable("id") int id, Model model) {
+
+		model.addAttribute("product", productService.getProductByID(id));
+		System.out.println(id);
+		model.addAttribute("productList", this.productService.list());
+
+		return "/admin/ProductAdd";
 
 	}
 
+}

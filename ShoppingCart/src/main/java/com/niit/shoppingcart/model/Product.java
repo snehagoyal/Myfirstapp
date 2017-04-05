@@ -19,7 +19,7 @@ public class Product implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int id;;
+	private int id;
 	
 	private String name;
 	

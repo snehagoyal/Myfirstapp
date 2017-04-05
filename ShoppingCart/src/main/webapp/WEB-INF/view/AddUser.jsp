@@ -5,17 +5,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="resources/css/cover.css" rel="stylesheet" type="text/css">
+
 <title>Insert User</title>
 </head>
 <body>
-<fm:form action ="userAdd"  commandname ="user">
-Username<input type="text" name="uname">
-Password:<input type="password" name="password"><br>
-Contact:<input type="text" name="contact"><br>
-Email:<input type="email" name="email"><br>
-Address:<input type="text" name="address">
+<fm:form action ="userAdd"  commandName="user" >
+Id:<br>
+			<fm:input path="id" type="text" name="id" placeholder="Enter Id" />
+			<br>
+		
+			UserName<br>
+			<fm:input path="uname" type="text" name="uname" placeholder="Enter name" />
+			<br>
+			 Password<br>
+			<fm:input path="password" type="text" name="password" placeholder="Enter password" />
+			<br>	
+Contact:<fm:input path="contact" type="text" name="contact"/><br>
+Email:<fm:input path="email" type="text" name="email"/><br>
+Address:<input path="address" type="text" name="address"/>
 <input type="submit" value="Submit">
-<input type="reset" value="reset">
+
 
 </fm:form>
 

@@ -24,12 +24,11 @@ public class SupplierController {
 	public void setSupplierService(SupplierService supplierService) {
 	}
 
-/*	@RequestMapping("/supplier")
+	@RequestMapping("/supplier")
 	public ModelAndView showSupplierAdd() {
 		ModelAndView mv = new ModelAndView("/admin/SupplierAdd");
 		mv.addObject("supplieradded", new Supplier());
-		//mv.addObject("supplierList", supplierService.list());
-
+//		mv.addObject("supplierList", supplierService.list()); 
 		return mv;
 
 	}
@@ -50,8 +49,8 @@ public class SupplierController {
 		return mv;
 
 	}
-*/
-	@RequestMapping("/supplier")
+
+	/*@RequestMapping("/supplier")
 	public ModelAndView showSupplierAdd() {
 		ModelAndView mv = new ModelAndView("/addSupplier");
 		mv.addObject("supplieradded", new Supplier());
@@ -78,16 +77,22 @@ public class SupplierController {
 		}
 		return mv;
 
-	}
+	}*/
 
 	@RequestMapping("/delete_Supplier/{id}")
-	public ModelAndView deleteSupplier(@PathVariable("id") int id, Model model) throws Exception {
-		ModelAndView mv = new ModelAndView("/addSupplier");
-		boolean b = this.supplierService.delete(id);
-		if (b) {
-			System.out.println("delete ho gaya");
-		}
+	public ModelAndView deleteSupplier(@PathVariable("id") int id, Model model)  {
+		ModelAndView mv = new ModelAndView("redirect:/supplier");
+	 this.supplierService.delete(id);
 		return mv;
 	}
 
+	@RequestMapping("/edit_Supplier/{id}")
+	public String editBrand(@PathVariable("id") int id, Model model) {
+
+		model.addAttribute("supplier", supplierService.getSupplierByID(id));
+		model.addAttribute("supplierList", this.supplierService.list());
+
+		return "/admin/AdminSupplier";
+
+	}
 }

@@ -17,16 +17,16 @@ import org.hibernate.Session;
 
 public class Category implements Serializable {
 
+	
+	private int id;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
 	private String name;
 	private String desc;
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

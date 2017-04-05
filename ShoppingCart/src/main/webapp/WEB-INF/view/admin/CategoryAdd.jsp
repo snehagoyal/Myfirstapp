@@ -11,22 +11,28 @@
 <title>Category Add</title>
 </head>
 <body>
-	<fm:form action="categoryAdd" commandName="category" modelAttribute="category" method="post">
+	<fm:form action="categoryAdd" commandName="category"
+		modelAttribute="category" method="post">
 		<fieldset>
 			<legend>Category Addition:</legend>
+		<!--  <c:if test="${not empty category.name }" >
+			id:
+				<fm:input path="id" type="text" name="id" placeholder="id" readonly="true"/></c:if>-->
 			Name<br>
-			<fm:input path="name" type="text" name="name" placeholder="Enter name" />
+			<fm:input path="name" type="text" name="name"
+				placeholder="Enter name" />
 			<br> Desc<br>
-			<fm:input path="desc" type="text" name="desc" placeholder="Enter description" />
-				
-				
-				<c:if test="${empty category.name }">
-					<input type="submit" value="Add brand">
-				</c:if>
-				<c:if test="${not empty category.name }">
-					<input type="submit" value="Edit brand">
-				</c:if>
-			
+			<fm:input path="desc" type="text" name="desc"
+				placeholder="Enter description" />
+
+
+			<c:if test="${empty category.name }">
+				<input type="submit" value="Add category">
+			</c:if>
+			<c:if test="${not empty category.name }">
+				<input type="submit" value="Edit category">
+			</c:if>
+
 		</fieldset>
 	</fm:form>
 	<table border="2">
@@ -36,7 +42,7 @@
 				<td>ID</td>
 				<td>Name</td>
 				<td>Desc</td>
-				
+
 				<td colspan=2>Action</td>
 			</tr>
 		</thead>
@@ -49,9 +55,9 @@
 
 				<td>${category.desc}</td>
 
-				<td><a href="edit_Category/${category.id}">Edit</a></td>
+				<td><a href="<c:url value='/edit_Category/${category.id}'/>">Edit</a></td>
 
-				<td><a href="<c:url value='/delete_Category/${category.id}' />">Delete</a></td>
+				<td><a href="<c:url value='/delete_Category/${category.id}'/>">Delete</a></td>
 
 			</tr>
 		</c:forEach>

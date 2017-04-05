@@ -19,7 +19,6 @@ import com.niit.shoppingcart.service.ProductService;
 @Controller
 public class CategoryController {
 
-	
 	private CategoryService categoryService;
 
 	@Autowired(required = true)
@@ -27,40 +26,43 @@ public class CategoryController {
 		this.categoryService = categoryService;
 	}
 
-	
-
 	@RequestMapping("/category")
 	public ModelAndView showCategoryPage() {
 		ModelAndView mv = new ModelAndView("/admin/CategoryAdd");
 		mv.addObject("category", new Category());
 		mv.addObject("categoryList", categoryService.list());
-			
-	
-		return mv;
-	}
-	
-	@RequestMapping("/categoryAdd")
-	public ModelAndView insertCategory(@ModelAttribute("category") Category c, BindingResult result , Model model, HttpServletRequest request ){
 
-		ModelAndView mv =new ModelAndView("forward:/category");
-		this.categoryService.save(c);
 		return mv;
 	}
+
+	@RequestMapping("/categoryAdd")
+	public String insertCategory(@ModelAttribute("category") Category c) {
+
+		System.out.println(c.getId());
+		if(c.getId()==0){
+			System.out.println("null");
+			this.categoryService.save(c);
+		}
+		else{
+			System.out.println("not null");
+			this.categoryService.update(c);
+		}
+		return "forward:/category";
+	}
+
 	@RequestMapping("/delete_Category/{id}")
-	public ModelAndView deleteCategory(@PathVariable("id") int id)throws Exception
-	{
-		ModelAndView mv = new ModelAndView("forward:/Category");
+	public ModelAndView deleteCategory(@PathVariable("id") int id) {
+		ModelAndView mv = new ModelAndView("forward:/category");
 		this.categoryService.delete(id);
-	    return mv;
-	}	
-	@RequestMapping("/update_Category/{id}")
-	public ModelAndView editCategory(@PathVariable("id") int id)
-	{
-		ModelAndView mv = new ModelAndView("forward:/Category");
-		//this.categoryService.update(c);
-	    return mv;
-	}	
+		return mv;
+	}
+
+	@RequestMapping("/edit_Category/{id}")
+	public String editCategory(@PathVariable("id") int id, Model model) {
+		model.addAttribute("category", categoryService.getCategoryByID(id));
+		model.addAttribute("categoryList", this.categoryService.list());
+
+		return "/admin/CategoryAdd";
+	}
 
 }
-
-

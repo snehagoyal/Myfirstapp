@@ -19,8 +19,11 @@ public class UserServiceImpl implements UserService {
 	
 @Transactional
 public void addUser(User u) {
-	// TODO Auto-generated method stub
 userDao.addUser(u);	
+}
+
+public boolean validate(String uname, String password) {
+	return userDao.validate(uname, password);
 }
 	
 

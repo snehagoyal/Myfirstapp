@@ -54,23 +54,6 @@ public ModelAndView showLoginPage() {
 
 
 
-@RequestMapping("/validate")
-public ModelAndView validateCredentials(@RequestParam("uname")String id, @RequestParam("password")String pwd)
-{
-	ModelAndView mv =new ModelAndView("/home");
-	
-	if(id.equals("sneha") && pwd.equals("s@123") )
-	{
-		mv.addObject("successMessage", "Valid Credentials");
-		session.setAttribute("loginMessage", id);
-	}
-	else
-	{
-		mv.addObject("errorMeassge","Invalid Credentials");
-	}
-	return mv;
-}
-
 @RequestMapping("/logout")
 public ModelAndView showLogoutPage()
 {

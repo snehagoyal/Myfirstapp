@@ -9,16 +9,14 @@ import javax.persistence.Id;
 
 @Entity
 public class Authorization implements Serializable{
-	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private String id;
 	private String Role;
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(String string) {
+		this.id = string;
 	}
 	public String getRole() {
 		return Role;
