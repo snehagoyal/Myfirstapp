@@ -61,17 +61,19 @@ body {
 		<br>
 		<a href="AddUser">Adduser</a>
 		<br>
+		<li><a href="adminHome">AdminHome</a></li>
+</security:authorize>
 
-
-	</security:authorize>
 	<security:authorize access="isAuthenticated()">
 		<security:authorize access="hasRole('ROLE_USER')">
 			<a href="cart">cart</a>
 			<br>
 		</security:authorize>
+		
 		<security:authorize access="hasAuthority('ROLE_ADMIN')">
-			<li><a href="adminHome">Admin Home</a></li>
+			<li><a href="adminHome">AdminHome</a></li>
 		</security:authorize>
+		
 		<li><a href="logout">Logout</a></li>
 	</security:authorize>
 	<br>

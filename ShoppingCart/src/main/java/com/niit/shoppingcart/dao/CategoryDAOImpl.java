@@ -64,7 +64,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	public Category getCategoryByID(int id) {
-		return (Category) sessionFactory.getCurrentSession().createQuery("from category where id ='" + id + "'");
+		return  (Category) sessionFactory.getCurrentSession().createQuery("from category where id ='" + id + "'");
 
 	}
 
@@ -78,4 +78,5 @@ public class CategoryDAOImpl implements CategoryDAO {
 		}
 
 	}
+
 }

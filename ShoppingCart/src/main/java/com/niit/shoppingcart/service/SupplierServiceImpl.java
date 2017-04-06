@@ -24,9 +24,9 @@ public class SupplierServiceImpl implements SupplierService {
 	this.supplierDAO = supplierDAO;
 }
 	
-	public boolean save(Supplier s) {
+	public boolean persist(Supplier s) {
 		System.out.println("in service"+s.getAddress());
-			return supplierDAO.save(s);
+			return supplierDAO.persist(s);
 	}
 	public 	List<Supplier> list()
 	{
@@ -44,14 +44,14 @@ public class SupplierServiceImpl implements SupplierService {
 		
 
 	}
-	public boolean delete(int s_id)
+	public boolean delete(int id)
 	{
-		return supplierDAO.delete(s_id);
+		return supplierDAO.delete(id);
 
 	}
-	public Supplier getSupplierByID(int s_id)
+	public Supplier getSupplierByID(int id)
 	{
-		return supplierDAO.getSupplierByID(s_id);
+		return supplierDAO.getSupplierByID(id);
 	}
 
 }

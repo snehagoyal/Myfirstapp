@@ -45,7 +45,7 @@ public ModelAndView showStartPage1() {
 	
 @RequestMapping("/login")
 public ModelAndView showLoginPage() {
-	ModelAndView mv= new ModelAndView("/Login");
+	ModelAndView mv= new ModelAndView("/home");
 	mv.addObject("LoginClicked" ,"true");
 			return mv;
 

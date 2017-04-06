@@ -11,19 +11,17 @@
 <title>Category Add</title>
 </head>
 <body>
-	<fm:form action="categoryAdd" commandName="category"
-		modelAttribute="category" method="post">
+	<fm:form action="categoryAdd" commandName="category" modelAttribute="category" method="post">
 		<fieldset>
 			<legend>Category Addition:</legend>
-		<!--  <c:if test="${not empty category.name }" >
-			id:
-				<fm:input path="id" type="text" name="id" placeholder="id" readonly="true"/></c:if>-->
+	ID<br>
+			<fm:input path="id" type="text" name="id" placeholder="Enter id" />
+			<br>
+
 			Name<br>
-			<fm:input path="name" type="text" name="name"
-				placeholder="Enter name" />
+			<fm:input path="name" type="text" name="name" placeholder="Enter name" />
 			<br> Desc<br>
-			<fm:input path="desc" type="text" name="desc"
-				placeholder="Enter description" />
+			<fm:input path="desc" type="text" name="desc" placeholder="Enter description" />
 
 
 			<c:if test="${empty category.name }">

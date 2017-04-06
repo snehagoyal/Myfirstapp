@@ -27,6 +27,7 @@ public class CategoryServiceImpl implements CategoryService {
 	public List<Category> list() {
 		return categoryDAO.list();
 	}
+	
 
 	public boolean update(Category c) {
 		return categoryDAO.update(c);
@@ -44,7 +45,6 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	public Category getCategoryByID(int id) {
-		// TODO Auto-generated method stub
 		return categoryDAO.getCategoryByID(id);
 
 	}

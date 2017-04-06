@@ -1,3 +1,6 @@
+
+
+
 package com.niit.shoppingcart.model;
 
 import java.io.Serializable;
@@ -17,7 +20,7 @@ import org.hibernate.Session;
 
 public class Category implements Serializable {
 
-	
+	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	private int id;
 	@Id
 	private String name;

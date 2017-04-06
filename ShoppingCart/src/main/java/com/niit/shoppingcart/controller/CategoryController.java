@@ -44,10 +44,11 @@ public class CategoryController {
 			this.categoryService.save(c);
 		}
 		else{
+			
 			System.out.println("not null");
 			this.categoryService.update(c);
 		}
-		return "forward:/category";
+		return "admin/CategoryAdd";
 	}
 
 	@RequestMapping("/delete_Category/{id}")

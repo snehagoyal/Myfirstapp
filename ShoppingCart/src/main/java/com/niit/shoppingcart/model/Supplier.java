@@ -7,11 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.stereotype.Component;
-
 @Entity
-public class Supplier implements Serializable{
-
+public class Supplier  implements Serializable{
+	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	@Id
 	private int id;
 	private String name;
@@ -35,6 +33,7 @@ public class Supplier implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
 	
 
 }

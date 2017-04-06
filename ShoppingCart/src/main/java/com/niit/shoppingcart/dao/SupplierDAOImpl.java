@@ -17,12 +17,13 @@ public class SupplierDAOImpl implements SupplierDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public boolean save(Supplier s) {
+	public boolean persist(Supplier s) {
 		System.out.println("reached to dao" + s.getName());
 		try {
 			sessionFactory.getCurrentSession().save(s);
 			return true;
 		} catch (Exception e) {
+			System.out.println("sajal");
 			e.printStackTrace();
 			return false;
 		}

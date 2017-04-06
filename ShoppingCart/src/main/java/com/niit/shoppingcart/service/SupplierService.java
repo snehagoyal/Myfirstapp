@@ -8,11 +8,12 @@ import java.util.List;
 
 public interface SupplierService {
 
-	public boolean save(Supplier s);
+	public boolean persist(Supplier s);
 	public List<Supplier> list();
 	public boolean update(Supplier s);
 	public boolean delete(Supplier s);
-	public boolean delete(int s_id);
-	public Supplier getSupplierByID(int s_id);
+	public boolean delete(int id);
+	public Supplier getSupplierByID(int id);
+	
 	
 }

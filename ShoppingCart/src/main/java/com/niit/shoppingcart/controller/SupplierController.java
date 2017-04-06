@@ -1,6 +1,6 @@
 package com.niit.shoppingcart.controller;
 
-import javax.servlet.http.HttpServletRequest;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,36 +17,37 @@ import com.niit.shoppingcart.service.SupplierService;
 
 @Controller
 public class SupplierController {
-
+	@Autowired
 	private SupplierService supplierService;
 
-	@Autowired(required = true)
+	
 	public void setSupplierService(SupplierService supplierService) {
 	}
 
 	@RequestMapping("/supplier")
 	public ModelAndView showSupplierAdd() {
 		ModelAndView mv = new ModelAndView("/admin/SupplierAdd");
-		mv.addObject("supplieradded", new Supplier());
-//		mv.addObject("supplierList", supplierService.list()); 
+		mv.addObject("aaddsupplier", new Supplier());
+	//mv.addObject("supplierList", supplierService.list()); 
 		return mv;
 
 	}
 
-	@RequestMapping(value = "/supplierAdd", method = RequestMethod.POST)
-	public ModelAndView insertSupplier(@Valid @ModelAttribute("supplieradded") Supplier s) {
+	@RequestMapping(value = "/supplieradd", method = RequestMethod.POST)
+	public String insertSupplier(@ModelAttribute("aaddsupplier") Supplier s) {
 		
-		ModelAndView mv=new ModelAndView("forward:/supplier");
+		//ModelAndView mv=new ModelAndView("forward:/supplier");
 		try {
 			System.out.println(s.getId());
 			System.out.println(s.getName());
 			System.out.println(s.getAddress());
-			this.supplierService.save(s);
+			this.supplierService.persist(s);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			System.out.println("catch of controller");
 			e.printStackTrace();
 		}
-		return mv;
+		return ("forward:/supplier");
 
 	}
 

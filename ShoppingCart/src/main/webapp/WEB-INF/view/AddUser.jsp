@@ -14,16 +14,18 @@
 Id:<br>
 			<fm:input path="id" type="text" name="id" placeholder="Enter Id" />
 			<br>
-		
-			UserName<br>
+		    UserName<br>
 			<fm:input path="uname" type="text" name="uname" placeholder="Enter name" />
 			<br>
 			 Password<br>
 			<fm:input path="password" type="text" name="password" placeholder="Enter password" />
 			<br>	
-Contact:<fm:input path="contact" type="text" name="contact"/><br>
-Email:<fm:input path="email" type="text" name="email"/><br>
-Address:<input path="address" type="text" name="address"/>
+Contact:<br>
+<fm:input path="contact" type="text" name="contact"/><br>
+Email:<br>
+<fm:input path="email" type="text" name="email"/><br>
+Address:<br>
+<input path="address" type="text" name="address"/>
 <input type="submit" value="Submit">
 
 
