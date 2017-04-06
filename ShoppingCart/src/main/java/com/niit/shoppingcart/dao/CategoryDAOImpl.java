@@ -64,13 +64,13 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	public Category getCategoryByID(String id) {
-		return  (Category) sessionFactory.getCurrentSession().createQuery("from category where id ='" + id + "'");
+		return  (Category) sessionFactory.getCurrentSession().get(Category.class, id);
 
 	}
 
 	public boolean delete(String id) {
 		try {
-			sessionFactory.getCurrentSession().delete(getCategoryByID(id));
+			sessionFactory.getCurrentSession().delete(id);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

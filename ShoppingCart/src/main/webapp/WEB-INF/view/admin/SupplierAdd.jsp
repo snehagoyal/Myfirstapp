@@ -10,9 +10,11 @@
 <title>Add supplier</title>
 </head>
 <body>
-	<fm:form action="supplieradd" commandName="aaddsupplier"
-		modelAttribute="aaddsupplier" method="post">
-		<c:if test="${not empty supplier.name }">
+	<fm:form action="${pageContext.request.contextPath}/supplieradd" commandName="aaddsupplier" modelAttribute="aaddsupplier" method="post">
+		<c:if test="${not empty 
+		
+		
+		supplier.name }">
 	Id:<br>
 			<fm:input path="id" type="text" name="id" placeholder="id" />
 			<br>
@@ -28,11 +30,11 @@ Address:
 <br>
 		<fm:input path="address" type="text" name="address"
 			placeholder="Enter placeholder" />
-		<c:if test="${empty category.name }">
+		<c:if test="${empty supplier.name }">
 			<input type="submit" value="Addsupplier">
 		</c:if>
 
-		<c:if test="${ not empty category.name }">
+		<c:if test="${ not empty supplier.name }">
 			<input type="submit" value="Addsupplier">
 		</c:if>
 	</fm:form>
@@ -49,11 +51,11 @@ Address:
 
 		<c:forEach var="supplier" items="${supplierList}">
 			<tr>
-				<td>supplier.id</td>
-				<td>supplier.name</td>
-				<td>supplier.address</td>
-				<td><a href="edit_supplier/${supplier.id}">Edit</a></td>
-				<td><a href="<c:url value='/delete_supplier/${supplier.id}'/>">delete</a></td>
+				<td>${supplier.id}</td>
+				<td>${supplier.name}</td>
+				<td>${supplier.address}</td>
+				<td><a href="edit_Supplier/${supplier.id}">Edit</a></td>
+				<td><a href="<c:url value='/delete_Supplier/${supplier.id}'/>">delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>

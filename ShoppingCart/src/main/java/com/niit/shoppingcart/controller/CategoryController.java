@@ -50,7 +50,8 @@ public class CategoryController {
 
 	@RequestMapping("/delete_Category/{id}")
 	public ModelAndView deleteCategory(@PathVariable("id") String id) {
-		System.out.println("DELETE");		ModelAndView mv = new ModelAndView("forward:/category");
+		System.out.println("DELETE");		
+		ModelAndView mv = new ModelAndView("forward:/category");
 		this.categoryService.delete(id);
 		return mv;
 	}

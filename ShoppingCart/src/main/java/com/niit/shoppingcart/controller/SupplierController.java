@@ -28,7 +28,7 @@ public class SupplierController {
 	public ModelAndView showSupplierAdd() {
 		ModelAndView mv = new ModelAndView("/admin/SupplierAdd");
 		mv.addObject("aaddsupplier", new Supplier());
-	//mv.addObject("supplierList", supplierService.list()); 
+	mv.addObject("supplierList", supplierService.list()); 
 		return mv;
 
 	}
@@ -37,17 +37,12 @@ public class SupplierController {
 	public String insertSupplier(@ModelAttribute("aaddsupplier") Supplier s) {
 		
 		//ModelAndView mv=new ModelAndView("forward:/supplier");
-		try {
-			System.out.println(s.getId());
-			System.out.println(s.getName());
-			System.out.println(s.getAddress());
+	if(s.getId() == 0)
 			this.supplierService.persist(s);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("catch of controller");
-			e.printStackTrace();
-		}
-		return ("forward:/supplier");
+	else
+		this.supplierService.update(s);
+	
+			return ("/admin/SupplierAdd");
 
 	}
 
@@ -90,10 +85,10 @@ public class SupplierController {
 	@RequestMapping("/edit_Supplier/{id}")
 	public String editBrand(@PathVariable("id") int id, Model model) {
 
-		model.addAttribute("supplier", supplierService.getSupplierByID(id));
+		model.addAttribute("aaddsupplier", supplierService.getSupplierByID(id));
 		model.addAttribute("supplierList", this.supplierService.list());
 
-		return "/admin/AdminSupplier";
+		return "/admin/SupplierAdd";
 
 	}
 }
