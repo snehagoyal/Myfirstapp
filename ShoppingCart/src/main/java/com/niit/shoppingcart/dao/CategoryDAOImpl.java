@@ -22,7 +22,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	public boolean save(Category c) {
 		try {
-		
+		    c.setId(c.getName());
 			sessionFactory.getCurrentSession().save(c);
 			return true;
 		} catch (Exception e) {
@@ -63,12 +63,12 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	}
 
-	public Category getCategoryByID(int id) {
+	public Category getCategoryByID(String id) {
 		return  (Category) sessionFactory.getCurrentSession().createQuery("from category where id ='" + id + "'");
 
 	}
 
-	public boolean delete(int id) {
+	public boolean delete(String id) {
 		try {
 			sessionFactory.getCurrentSession().delete(getCategoryByID(id));
 			return true;

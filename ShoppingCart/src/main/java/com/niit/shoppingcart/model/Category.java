@@ -1,11 +1,9 @@
-
-
-
 package com.niit.shoppingcart.model;
 
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -16,24 +14,19 @@ import javax.persistence.OneToMany;
 import org.hibernate.Session;
 
 @Entity
-
-
 public class Category implements Serializable {
-
-	@GeneratedValue(strategy= GenerationType.SEQUENCE)
-	private int id;
 	@Id
+	private String id;
+	@Column(unique=true)
 	private String name;
-	private String desc;
+	private String desc;	
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
-	
-	
 	@OneToMany(mappedBy="category", fetch=FetchType.EAGER)
 	private Set<Product> products;
 	
@@ -51,6 +44,12 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 	
+	public Set<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
 
 	
 

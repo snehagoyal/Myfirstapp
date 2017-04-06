@@ -39,27 +39,24 @@ public class CategoryController {
 	public String insertCategory(@ModelAttribute("category") Category c) {
 
 		System.out.println(c.getId());
-		if(c.getId()==0){
-			System.out.println("null");
+		if(c.getId()==null ||c.getId().isEmpty() )
 			this.categoryService.save(c);
-		}
 		else{
-			
-			System.out.println("not null");
+			System.out.println("update");
 			this.categoryService.update(c);
 		}
-		return "admin/CategoryAdd";
+		return "forward:/category";
 	}
 
 	@RequestMapping("/delete_Category/{id}")
-	public ModelAndView deleteCategory(@PathVariable("id") int id) {
-		ModelAndView mv = new ModelAndView("forward:/category");
+	public ModelAndView deleteCategory(@PathVariable("id") String id) {
+		System.out.println("DELETE");		ModelAndView mv = new ModelAndView("forward:/category");
 		this.categoryService.delete(id);
 		return mv;
 	}
 
 	@RequestMapping("/edit_Category/{id}")
-	public String editCategory(@PathVariable("id") int id, Model model) {
+	public String editCategory(@PathVariable("id") String id, Model model) {
 		model.addAttribute("category", categoryService.getCategoryByID(id));
 		model.addAttribute("categoryList", this.categoryService.list());
 

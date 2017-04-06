@@ -14,10 +14,12 @@
 	<fm:form action="categoryAdd" commandName="category" modelAttribute="category" method="post">
 		<fieldset>
 			<legend>Category Addition:</legend>
-	ID<br>
-			<fm:input path="id" type="text" name="id" placeholder="Enter id" />
+	<c:if test="${category.name}">
+	ID:<br>
+			<fm:input path="id" type="text" name="id" placeholder="Enter id" readonly="true" disabled="true"/>
 			<br>
-
+		
+</c:if>
 			Name<br>
 			<fm:input path="name" type="text" name="name" placeholder="Enter name" />
 			<br> Desc<br>

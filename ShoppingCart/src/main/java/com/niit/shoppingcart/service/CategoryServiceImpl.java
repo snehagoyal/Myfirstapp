@@ -39,12 +39,12 @@ public class CategoryServiceImpl implements CategoryService {
 
 	}
 
-	public boolean delete(int id) {
+	public boolean delete(String id) {
 		// TODO Auto-generated method stub
 		return categoryDAO.delete(id);
 	}
 
-	public Category getCategoryByID(int id) {
+	public Category getCategoryByID(String id) {
 		return categoryDAO.getCategoryByID(id);
 
 	}
