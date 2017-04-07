@@ -10,11 +10,9 @@
 <title>Add supplier</title>
 </head>
 <body>
-	<fm:form action="${pageContext.request.contextPath}/supplieradd" commandName="aaddsupplier" modelAttribute="aaddsupplier" method="post">
-		<c:if test="${not empty 
-		
-		
-		supplier.name }">
+	<fm:form action="${pageContext.request.contextPath}/supplieradd"
+		commandName="aaddsupplier" modelAttribute="aaddsupplier" method="post">
+		<c:if test="${not empty supplier.name }">
 	Id:<br>
 			<fm:input path="id" type="text" name="id" placeholder="id" />
 			<br>

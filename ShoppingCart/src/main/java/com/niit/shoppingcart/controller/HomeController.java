@@ -62,4 +62,11 @@ public ModelAndView showLogoutPage()
 	return mv;
 	
 }
+
+
+@RequestMapping("/cover")
+public String coverpage(){
+	return "/cover";
+}
+
 }

@@ -70,7 +70,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	public boolean delete(String id) {
 		try {
-			sessionFactory.getCurrentSession().delete(id);
+			sessionFactory.getCurrentSession().delete(getCategoryByID(id));
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

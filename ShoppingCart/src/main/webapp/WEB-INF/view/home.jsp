@@ -29,9 +29,10 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
 <style>
 body {
-     background: url(http://p1.pichost.me/i/66/1910819.jpg) no-repeat center center fixed; 
+     background: url("https://image.freepik.com/free-vector/abstract-background-with-a-watercolor-texture_1048-2144.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -49,9 +50,12 @@ body {
 </style>
 </head>
 <body>
-	<h1>Shopping cart</h1>
+	<h4>Shopping cart</h4>
+	
 	<hr>
 	<jsp:include page="navbar.jsp" />
+	
+	
 	<hr>
 	${loginMessage}${errorMessage }
 	<br> ${successMessage}
@@ -61,7 +65,7 @@ body {
 		<br>
 		<a href="AddUser">Adduser</a>
 		<br>
-		<li><a href="adminHome">AdminHome</a></li>
+		
 </security:authorize>
 
 	<security:authorize access="isAuthenticated()">
@@ -87,6 +91,6 @@ body {
 	<hr>
 
 	<jsp:include page="footer.jsp"></jsp:include>
-
+<img src="${pageContext.request.contextPath}/resources/images/back.jpg" >
 </body>
 </html>

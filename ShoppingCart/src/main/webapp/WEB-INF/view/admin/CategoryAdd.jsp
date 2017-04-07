@@ -11,10 +11,10 @@
 <title>Category Add</title>
 </head>
 <body>
-	<fm:form action="categoryAdd" commandName="category" modelAttribute="category" method="post">
+	<fm:form action="${pageContext.request.contextPath}/categoryAdd" commandName="category" modelAttribute="category" method="post">
 		<fieldset>
 			<legend>Category Addition:</legend>
-	<c:if test="${category.name}">
+	<c:if test="${not empty category.name}">
 	ID:<br>
 			<fm:input path="id" type="text" name="id" placeholder="Enter id" readonly="true" disabled="true"/>
 			<br>
