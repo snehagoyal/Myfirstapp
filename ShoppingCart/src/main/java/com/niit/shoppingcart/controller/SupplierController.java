@@ -42,7 +42,7 @@ public class SupplierController {
 	else
 		this.supplierService.update(s);
 	
-			return ("/admin/SupplierAdd");
+			return ("forward:/supplier");
 
 	}
 

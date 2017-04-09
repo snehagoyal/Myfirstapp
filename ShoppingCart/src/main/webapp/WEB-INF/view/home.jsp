@@ -19,7 +19,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link href="resources/css/navbar.css" rel="stylesheet" type="text/css">
-<link href="resources/css/cover.css" rel="stylesheet" type="text/css">
+
 
 <script src="resources/js/navbar.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -30,67 +30,34 @@
 
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<style>
+<!--  <style>
 body {
-     background: url("https://image.freepik.com/free-vector/abstract-background-with-a-watercolor-texture_1048-2144.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  
-  height: 100%;
-  background-color: #060;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
- 
+  background-image: url(resources/images/img11.jpg); 
 }
-
+-->
 
 </style>
+
+
 </head>
 <body>
-	<h4>Shopping cart</h4>
-	
-	<hr>
-	<jsp:include page="navbar.jsp" />
+	<h2>Shopping cart</h2>
 	
 	
-	<hr>
-	${loginMessage}${errorMessage }
+	<jsp:include page="navbar.jsp" ></jsp:include>
+	<jsp:include page="carousel.jsp"></jsp:include>
+	
+	
+	${loginMessage}${errorMessage }${user}
 	<br> ${successMessage}
 	<hr>
-	<security:authorize access="isAnonymous()">
-		<a href="login">Login</a>
-		<br>
-		<a href="AddUser">Adduser</a>
-		<br>
-		
-</security:authorize>
-
-	<security:authorize access="isAuthenticated()">
-		<security:authorize access="hasRole('ROLE_USER')">
-			<a href="cart">cart</a>
-			<br>
-		</security:authorize>
-		
-		<security:authorize access="hasAuthority('ROLE_ADMIN')">
-			<li><a href="adminHome">AdminHome</a></li>
-		</security:authorize>
-		
-		<li><a href="logout">Logout</a></li>
-	</security:authorize>
-	<br>
-	<br>
-	<c:if test="${LoginClicked==true or not empty errorMessage}">
+		<c:if test="${LoginClicked==true or not empty errorMessage}">
 		<jsp:include page="Login.jsp"></jsp:include>
 	</c:if>
 
 	<c:if test="${user==true }">
-		<jsp:include page="AddUser.jsp"></jsp:include></c:if>
-	<hr>
+		</c:if>
 
-	<jsp:include page="footer.jsp"></jsp:include>
-<img src="${pageContext.request.contextPath}/resources/images/back.jpg" >
+
 </body>
 </html>

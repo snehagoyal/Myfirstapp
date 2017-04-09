@@ -10,7 +10,7 @@
 <title>Insert User</title>
 </head>
 <body>
-<fm:form action ="userAdd"  commandName="user" >
+<fm:form action ="userAdd"  commandName="user" modelAttribute="user" method="post" >
 Id:<br>
 			<fm:input path="id" type="text" name="id" placeholder="Enter Id" />
 			<br>
@@ -21,11 +21,12 @@ Id:<br>
 			<fm:input path="password" type="text" name="password" placeholder="Enter password" />
 			<br>	
 Contact:<br>
-<fm:input path="contact" type="text" name="contact"/><br>
+<fm:input path="contact" type="text" name="contact" placeholder="Enter contact" /> <br>
 Email:<br>
-<fm:input path="email" type="text" name="email"/><br>
+<fm:input path="email" type="text" name="email"  placeholder="Enter email" /><br>
 Address:<br>
-<input path="address" type="text" name="address"/>
+<input path="address" type="text" name="address"  placeholder="Enter Address" />
+
 <input type="submit" value="Submit">
 
 

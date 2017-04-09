@@ -241,15 +241,37 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-expanded="false">My
-						account <span class="caret"></span>
+					data-toggle="dropdown" role="button" aria-expanded="false">My account <span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
+					<security:authorize access="isAnonymous()">
+							<li><a href="login">Login
+							<i class="fa fa-sign-in" ></i>
+						</a>	</li>
+					<li>	<a href="AddUser">Adduser
+											<i class="fa fa-users" ></i>
+											</a></li>
+					</security:authorize>
+					<security:authorize access="isAuthenticated()">
+		<security:authorize access="hasRole('ROLE_USER')">
+		<li>	<a href="cart">cart
+		<i class="fa fa-shopping-bag" ></i>
+		</a></li>
+			
+		</security:authorize>
+		
+		<security:authorize access="hasAuthority('ROLE_ADMIN')">
+			<li><a href="adminHome">AdminHome
+			<i class="fa fa-database" ></i>
+			</a></li>
+		</security:authorize>
+		
+		<li><a href="logout">Logout
+		<i class="fa fa-sign out" ></i>
+		</a></li>
+	</security:authorize>
+	
+					
 					</ul></li>
 				<li><a href="#">My cart (0) items</a></li>
 			</ul>

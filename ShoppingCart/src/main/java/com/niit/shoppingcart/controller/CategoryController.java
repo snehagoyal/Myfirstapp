@@ -2,6 +2,7 @@ package com.niit.shoppingcart.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,7 +37,7 @@ public class CategoryController {
 	}
 
 	@RequestMapping("/categoryAdd")
-	public String insertCategory(@ModelAttribute("category") Category c) {
+	public String insertCategory(@ModelAttribute("category") Category c, Model model) {
 
 		System.out.println(c.getId());
 		if(c.getId()==null ||c.getId().isEmpty() )
@@ -45,6 +46,7 @@ public class CategoryController {
 			System.out.println("update");
 			this.categoryService.update(c);
 		}
+		model.addAttribute("categoryList", this.categoryService.list());
 		return "forward:/category";
 	}
 
@@ -61,7 +63,7 @@ public class CategoryController {
 		model.addAttribute("category", categoryService.getCategoryByID(id));
 		model.addAttribute("categoryList", this.categoryService.list());
 
-		return "/admin/CategoryAdd";
+		return "forward:/category";
 	}
 
 }

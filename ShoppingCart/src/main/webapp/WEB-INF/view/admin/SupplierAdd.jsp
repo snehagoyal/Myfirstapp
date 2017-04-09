@@ -14,26 +14,25 @@
 		commandName="aaddsupplier" modelAttribute="aaddsupplier" method="post">
 		<c:if test="${not empty supplier.name }">
 	Id:<br>
-			<fm:input path="id" type="text" name="id" placeholder="id" />
+			<fm:input path="id" type="text" name="id" placeholder="id"  readonly="true"/>
 			<br>
 		</c:if>
 				
 				
 Name:
 <br>
-		<fm:input path="name" type="text" name="name"
-			placeholder="Enter placeholder" />
+		<fm:input path="name" type="text" name="name" placeholder="Enter placeholder" />
 		<br>
 Address:
 <br>
 		<fm:input path="address" type="text" name="address"
 			placeholder="Enter placeholder" />
 		<c:if test="${empty supplier.name }">
-			<input type="submit" value="Addsupplier">
+			<input type="submit" value="Add supplier">
 		</c:if>
 
 		<c:if test="${ not empty supplier.name }">
-			<input type="submit" value="Addsupplier">
+			<input type="submit" value="Edit supplier">
 		</c:if>
 	</fm:form>
 
