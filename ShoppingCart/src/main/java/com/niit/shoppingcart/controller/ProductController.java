@@ -75,7 +75,7 @@ public class ProductController {
 			this.productService.update(p);
 		}
 
-		return "/admin/ProductAdd";
+		return "forward:/product";
 
 	}
 

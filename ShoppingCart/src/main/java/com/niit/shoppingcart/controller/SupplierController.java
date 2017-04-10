@@ -36,7 +36,7 @@ public class SupplierController {
 	@RequestMapping(value = "/supplieradd", method = RequestMethod.POST)
 	public String insertSupplier(@ModelAttribute("aaddsupplier") Supplier s) {
 		
-		//ModelAndView mv=new ModelAndView("forward:/supplier");
+		System.out.println(s.getId());
 	if(s.getId() == 0)
 			this.supplierService.persist(s);
 	else
@@ -45,35 +45,6 @@ public class SupplierController {
 			return ("forward:/supplier");
 
 	}
-
-	/*@RequestMapping("/supplier")
-	public ModelAndView showSupplierAdd() {
-		ModelAndView mv = new ModelAndView("/addSupplier");
-		mv.addObject("supplieradded", new Supplier());
-		
-		mv.addObject("supplierList", supplierService.list());
-
-		return mv;
-
-	}
-
-	@RequestMapping(value = "/supplierAdd", method = RequestMethod.POST)
-	public ModelAndView insertSupplier(@ModelAttribute("supplieradded") Supplier s) {
-		
-		ModelAndView mv=new ModelAndView("forward:/supplier");
-		try {
-			System.out.println(s.getId());
-			System.out.println(s.getName());
-			System.out.println(s.getAddress());
-			System.out.println("going to service");
-			this.supplierService.saveSupplier(s);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return mv;
-
-	}*/
 
 	@RequestMapping("/delete_Supplier/{id}")
 	public ModelAndView deleteSupplier(@PathVariable("id") int id, Model model)  {

@@ -34,10 +34,8 @@
 body {
   background-image: url(resources/images/img11.jpg); 
 }
--->
-
 </style>
-
+-->
 
 </head>
 <body>

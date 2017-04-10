@@ -46,7 +46,7 @@ public class CategoryController {
 			System.out.println("update");
 			this.categoryService.update(c);
 		}
-		model.addAttribute("categoryList", this.categoryService.list());
+		
 		return "forward:/category";
 	}
 
@@ -63,7 +63,7 @@ public class CategoryController {
 		model.addAttribute("category", categoryService.getCategoryByID(id));
 		model.addAttribute("categoryList", this.categoryService.list());
 
-		return "forward:/category";
+		return "/admin/CategoryAdd";
 	}
 
 }

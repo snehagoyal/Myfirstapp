@@ -35,7 +35,7 @@
 				Category of the Product:
 				<fm:select path="categoryid">
 						<c:forEach var="category" items="${categoryList}">
-							<fm:option value="${category.name}">${category.name}</fm:option>
+							<fm:option value="${category.id}">${category.id}</fm:option>
 						</c:forEach>
 					</fm:select>
 			
@@ -71,7 +71,8 @@
 				<td>${product.desc}</td>
 				<td>${product.price}</td>
                 <td>${product.categoryid}</td>
-				<td><a href="edit_product/${product.id}">Edit</a></td>
+                <td><a href="<c:url value='/edit_product/${product.id}' />">Edit</a></td>
+				
 
 				<td><a href="<c:url value='/delete_Product/${product.id}' />">Delete</a></td>
 

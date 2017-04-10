@@ -14,8 +14,6 @@ import com.niit.shoppingcart.model.Product;
 public class CategoryDAOImpl implements CategoryDAO {
 
 	SessionFactory sessionFactory;
-	
-
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;

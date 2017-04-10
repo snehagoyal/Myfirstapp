@@ -5,15 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="resources/css/cover.css" rel="stylesheet" type="text/css">
 
 <title>Insert User</title>
 </head>
 <body>
 <fm:form action ="userAdd"  commandName="user" modelAttribute="user" method="post" >
-Id:<br>
-			<fm:input path="id" type="text" name="id" placeholder="Enter Id" />
-			<br>
+
 		    UserName<br>
 			<fm:input path="uname" type="text" name="uname" placeholder="Enter name" />
 			<br>
