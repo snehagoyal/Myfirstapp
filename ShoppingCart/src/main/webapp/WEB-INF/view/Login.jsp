@@ -7,6 +7,9 @@
 <title>Shopping Cart Login Page</title>
 </head>
 <body>
+<h3><i class="fa fa-shopping-bag"/>Shopping cart<i class="fa fa-shopping-bag"/></h3>
+
+<jsp:include page="navbar.jsp"></jsp:include>
 <!--  userid= sneha,password=s@123  -->
 <form action="validate" method="post">
 Username:<input type= "text" name="uname" placeholder ="Enter username">
@@ -14,5 +17,7 @@ Username:<input type= "text" name="uname" placeholder ="Enter username">
 Password:<input type="password" name="password" placeholder ="Enter password">
 <input type="submit" value ="Login">
 </form>
+
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

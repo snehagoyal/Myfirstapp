@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -29,22 +30,17 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-<!--  <style>
-body {
-  background-image: url(resources/images/img11.jpg); 
-}
-</style>
--->
 
 </head>
 <body>
-	<h2>Shopping cart</h2>
 	
 	
 	<jsp:include page="navbar.jsp" ></jsp:include>
-	<jsp:include page="carousel.jsp"></jsp:include>
 	
+	
+	<jsp:include page="carousel.jsp"></jsp:include>
 	
 	${loginMessage}${errorMessage }${user}
 	<br> ${successMessage}
@@ -56,6 +52,7 @@ body {
 	<c:if test="${user==true }">
 		</c:if>
 
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>

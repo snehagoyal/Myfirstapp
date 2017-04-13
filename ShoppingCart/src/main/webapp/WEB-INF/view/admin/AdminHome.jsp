@@ -8,11 +8,13 @@
 <title>AdminHome Page</title>
 </head>
 <body>
+
 <a href= "product">Add Product</a>
 <br>
 <a href= "supplier">Add Supplier</a>
 <br>
 <a href= "category">Add Category</a>
 <br>
+<jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
 </body>
 </html>

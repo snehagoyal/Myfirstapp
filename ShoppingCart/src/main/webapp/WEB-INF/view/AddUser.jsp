@@ -9,25 +9,28 @@
 <title>Insert User</title>
 </head>
 <body>
-<fm:form action ="userAdd"  commandName="user" modelAttribute="user" method="post" >
 
-		    UserName<br>
+<jsp:include page="navbar.jsp"></jsp:include>
+<fm:form action ="userAdd"  commandName="user" modelAttribute="user" method="post" >
+<center>
+		    UserName
 			<fm:input path="uname" type="text" name="uname" placeholder="Enter name" />
 			<br>
-			 Password<br>
+			 Password
 			<fm:input path="password" type="text" name="password" placeholder="Enter password" />
 			<br>	
-Contact:<br>
+Contact:
 <fm:input path="contact" type="text" name="contact" placeholder="Enter contact" /> <br>
-Email:<br>
+Email:
 <fm:input path="email" type="text" name="email"  placeholder="Enter email" /><br>
-Address:<br>
-<input path="address" type="text" name="address"  placeholder="Enter Address" />
+Address:
+<input path="address" type="text" name="address"  placeholder ="Enter Address" />
 
 <input type="submit" value="Submit">
 
-
+</center>
 </fm:form>
 
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
