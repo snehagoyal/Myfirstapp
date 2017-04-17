@@ -69,6 +69,12 @@ public class ProductController {
 		return "forward:/product";
 
 	}
+	@RequestMapping("/product/{id}")
+	public String productPage(@PathVariable("id") int id ,Model model){
+		model.addAttribute( "product",productService.getProductByID(id));
+		return("/ProductDetails");
+	}
+	
 
 	@RequestMapping("/delete_Product/{id}")
 	public String deleteProduct(@PathVariable("id") int id) {

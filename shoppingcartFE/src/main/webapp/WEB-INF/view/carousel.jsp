@@ -34,15 +34,15 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<img src="resources/images/img7.jpg" alt="" width="1000"
-					height="500" class="img-responsive">
+				<img src="resources/images/img7.jpg" alt="" width="1300"
+					height="200" class="img-responsive">
 				<div class="carousel-caption">
 					<p>
 						I could give up Shopping, but I'm not a Quitter.</p>
 				</div>
 			</div>
 			<div class="item">
-				<img src="resources/images/img19.jpg" alt="" width="1000"
+				<img src="resources/images/img19.jpg" alt="" width="1300"
 					height="500" class="img-responsive">
 				<div class="carousel-caption">
 					<p>
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<div class="item">
-				<img src="resources/images/img5.jpg" alt="" width="1000"
+				<img src="resources/images/img5.jpg" alt="" width="1300"
 					height="500" class="img-responsive">
 				<div class="carousel-caption">
 					<p>Crying is for plain women. Pretty women go shopping.
@@ -90,27 +90,27 @@
 				
 					<div>
 						<img src="resources/images/img17.jpg" width="400"
-							height="250"  class="img-responsive">
+							height="100"  class="img-responsive">
 					</div>
 					</div>
 			</div>
 	
 			<div class="col-sm-4">
 				<div class="col-padding">
-					<h3>
+					<p>
 						Don't stop me Now.
-					</h3>
+					</p>
 					<div>
 						<img src="resources/images/img15.jpg" width="400"
-							height="250" class="img-responsive">
+							height="200" class="img-responsive">
 					</div>
 				</div>
 			</div>
 					<div class="col-sm-4">
 				<div class="col-padding">
-					<h3>
+					<p>
 						Those who hate SHOPPING, don't know how to Shop.
-					</h3>
+					</p>
 					<div>
 						<img src="resources/images/img4.jpg" width="400"
 							height="250" class="img-responsive">
@@ -120,7 +120,7 @@
 		
 	</div>
 </div>
-<!-- END DIVIDED COLUMNS-->
+
 
 </body>
 </html>

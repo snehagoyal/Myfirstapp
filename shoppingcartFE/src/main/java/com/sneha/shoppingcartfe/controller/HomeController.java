@@ -51,6 +51,15 @@ public ModelAndView showLoginPage() {
 
 	
 }
+@RequestMapping("/home")
+public String shophome(){
+	return "/home";
+}
+
+@RequestMapping("/MyCart")
+public String cartpage(){
+	return "/MyCart";
+}
 
 
 
@@ -64,9 +73,5 @@ public ModelAndView showLogoutPage()
 }
 
 
-@RequestMapping("/cover")
-public String coverpage(){
-	return "/cover";
-}
 
 }

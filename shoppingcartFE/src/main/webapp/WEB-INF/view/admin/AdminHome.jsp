@@ -15,6 +15,7 @@
 <br>
 <a href= "category">Add Category</a>
 <br>
+
 <jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
 </body>
 </html>

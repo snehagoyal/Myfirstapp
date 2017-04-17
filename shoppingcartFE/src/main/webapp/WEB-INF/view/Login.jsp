@@ -7,15 +7,25 @@
 <title>Shopping Cart Login Page</title>
 </head>
 <body>
-<h3><i class="fa fa-shopping-bag"/>Shopping cart<i class="fa fa-shopping-bag"/></h3>
 
 <jsp:include page="navbar.jsp"></jsp:include>
-<!--  userid= sneha,password=s@123  -->
 <form action="validate" method="post">
-Username:<input type= "text" name="uname" placeholder ="Enter username">
-<br>
-Password:<input type="password" name="password" placeholder ="Enter password">
-<input type="submit" value ="Login">
+<center>
+<table>
+<tr>
+<td>Username<input type= "text" name="uname" placeholder ="Enter username"></td>
+
+</tr>
+<tr>
+<td>Password:<input type="password" name="password" placeholder ="Enter password"></td>
+</tr>
+
+
+<tr>
+<td><input type="submit" value ="Login"></td></tr>
+
+</table>
+</center>
 </form>
 
 <jsp:include page="footer.jsp"></jsp:include>

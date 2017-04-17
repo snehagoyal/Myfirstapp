@@ -19,40 +19,52 @@
 
 	<fm:form action="${pageContext.request.contextPath}/productAdd" commandName="product" modelAttribute="product" method="post" enctype="multipart/form-data">
 		<center>
-				<h2>Product Addition:</h2>
+		<table>
+				<h2>Product Addition</h2>
 			<c:if test="${not empty product.name }">
-			Id
+			<tr>
+		<td>	Id</td>
 			<fm:input path="id" type="text" name="id" placeholder="Enter id" readonly="true" />
+			</tr>
 			</c:if>
-			Name
-			<fm:input path="name" type="text" name="name" placeholder="Enter name" />
+		<tr>
+		
+	<td>		Name</td>
+		<td>	<fm:input path="name" type="text" name="name" placeholder="Enter name" /></td>
 			<br>
-			 Description
-			<fm:input path="desc" type="text" name="desc" placeholder="Enter Description" />
-			<br> 
-			Price
-			<fm:input path="price" type="text" name="price" placeholder="Enter Price" />
+			</tr>
+			<tr>
 			
-			Image
-			<input type="file" name="img"><br> 
+			<td> Description</td>
+		<td>	<fm:input path="desc" type="text" name="desc" placeholder="Enter Description" /></td>
+			<br> </tr>
+			<tr>
+	<td>		Price</td>
+		<td>	<fm:input path="price" type="text" name="price" placeholder="Enter Price" /></td>
+			</tr>
+		<tr>
+		<td>	Image</td>
+		<td>	<input type="file" name="img"><br> </td>
 			
-			
-				Category of the Product:
+			</tr><tr><td>
+				Category of the Product:</td><td>
 				<fm:select path="categoryid">
 						<c:forEach var="category" items="${categoryList}">
 							<fm:option value="${category.id}">${category.id}</fm:option>
 						</c:forEach>
 					</fm:select>
-			
+			</td></tr>
 		
 		<br>
+		<tr><td>
 				<c:if test="${empty product.name }">
 				<h3>	<input type="submit" value="Add product"></h3>
 				</c:if>
 				<c:if test="${not empty product.name }">
 				<h3>	<input type="submit" value="Edit product"></h3>
 				</c:if>
-				
+			</td></tr>	
+				</table>
 				</center>
 	</fm:form>
 	<table border="2">
@@ -79,7 +91,7 @@
                 <td><a href="<c:url value='/edit_product/${product.id}' />">Edit<i class="fa fa-edit" aria-hidden="true"></i></a></td>
 				
 
-				<td><a href="<c:url value='/delete_Product/${product.id}' />">Delete<i class="fa fa-delete" aria-hidden="true"></i></a></td>
+				<td><a href="<c:url value='/delete_Product/${product.id}' />">Delete<i class="fa fa-eraser" aria-hidden="true"></i></a></td>
 
 			</tr>
 		</c:forEach>

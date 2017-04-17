@@ -17,29 +17,37 @@
 
 	<fm:form action="${pageContext.request.contextPath}/supplieradd" commandName="aaddsupplier" modelAttribute="aaddsupplier" method="post">
 		<center>
+		<table>
 		<c:if test="${not empty aaddsupplier.name }">
-	Id:
+<tr>
+<td>	Id</td>
 			<fm:input path="id" type="text" name="id" placeholder="id"  readonly="true"/>
 			<br>
+			</tr>
 		</c:if>
 				
-				
-Name:
+<tr>
+<td>Name</td>
 
-		<fm:input path="name" type="text" name="name" placeholder="Enter placeholder" />
+	<td>	<fm:input path="name" type="text" name="name" placeholder="Enter placeholder" /></td>
+	</tr>
 		<br>
-Address:
+		<tr>
+<td>Address</td>
 
-		<fm:input path="address" type="text" name="address"
-			placeholder="Enter placeholder" />
+	<td>	<fm:input path="address" type="text" name="address" placeholder="Enter placeholder" /></td>
 			<br>
-		<c:if test="${empty aaddsupplier.name }">
+			</tr>
+			<tr>
+	<td>	<c:if test="${empty aaddsupplier.name }">
 		<h3>	<input type="submit" value="Add supplier"></h3>
 		</c:if>
 
 		<c:if test="${ not empty aaddsupplier.name }">
 		<h3>	<input type="submit" value="Edit supplier"></h3>
-		</c:if>
+		</c:if></td>
+		<tr>
+		</table>
 		</center>
 	</fm:form>
 

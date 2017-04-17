@@ -15,36 +15,48 @@
 <title>Category Add</title>
 </head>
 <body>
+<center>
 <jsp:include page="/WEB-INF/view/navbar.jsp"></jsp:include>
 	<fm:form action="${pageContext.request.contextPath}/categoryAdd"
 		commandName="category" modelAttribute="category" method="post">
-		<center>
-			<h2> Category Addition: </h2>
+		<table>
+			
+			<h2> Category Addition </h2>
 			<c:if test="${not empty category.name}">
-	ID:
+	<tr>
+	<td>ID</td>
 				<fm:input path="id" type="text" name="id" placeholder="Enter id"
 					readonly="true" disabled="true" />
 				<fm:hidden path="id" />
-				<br>
+			</tr>	
 
 			</c:if>
-			Name 
-			<fm:input path="name" type="text" name="name"
+		<tr>
+		<td>Name</td> 
+		<td>	<fm:input path="name" type="text" name="name"
 				placeholder="Enter name" />
-			<br> Desc 
-			<fm:input path="desc" type="text" name="desc"
-				placeholder="Enter description" />
+				</td>
+				</tr>
+	<tr>
+		       <td>	Desc</td> 
+		       <td>	<fm:input path="desc" type="text" name="desc"
+				placeholder="Enter description" /></td>
+				</tr>
 
-<br>
-			<c:if test="${empty category.name }">
+<tr>
+		<td>	<c:if test="${empty category.name }">
 			<h3>	<input type="submit" value="Add category"></h3>
 			</c:if>
 			<c:if test="${not empty category.name }">
 			<h3>	<input type="submit" value="Edit category"></h3>
 			</c:if>
-</center>
-		
+			</td>
+</tr>
+	</table>
+	
 	</fm:form>
+	</center>
+	
 	<table border="2">
 <center>
 		<thead>
@@ -57,7 +69,7 @@
 			</tr>
 		</thead>
 	
-</center>
+<tbody>
 		<c:forEach var="category" items="${categoryList}">
 			<tr>
 
@@ -72,7 +84,8 @@
 
 			</tr>
 		</c:forEach>
-
+</tbody>
+</center>
 	</table>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>

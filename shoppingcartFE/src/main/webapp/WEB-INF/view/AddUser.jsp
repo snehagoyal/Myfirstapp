@@ -13,21 +13,36 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 <fm:form action ="userAdd"  commandName="user" modelAttribute="user" method="post" >
 <center>
-		    UserName
-			<fm:input path="uname" type="text" name="uname" placeholder="Enter name" />
-			<br>
-			 Password
-			<fm:input path="password" type="text" name="password" placeholder="Enter password" />
-			<br>	
-Contact:
-<fm:input path="contact" type="text" name="contact" placeholder="Enter contact" /> <br>
-Email:
-<fm:input path="email" type="text" name="email"  placeholder="Enter email" /><br>
-Address:
-<input path="address" type="text" name="address"  placeholder ="Enter Address" />
+<table>
 
-<input type="submit" value="Submit">
 
+		 <tr>
+		  <td>  UserName</td>
+		<td>	<fm:input path="uname" type="text" name="uname" placeholder="Enter name" /></td>
+		</tr><br>
+			
+			<tr>
+			<td> Password</td>
+		<td>	<fm:input path="password" type="text" name="password" placeholder="Enter password" /></td>
+		</tr>
+		<br>
+		<tr>		
+<td>Contact</td>
+<td><fm:input path="contact" type="number" name="contact" placeholder="Enter contact" /></td> 
+<br>
+<tr>
+<td>Email</td>
+<td><fm:input path="email" type="email" name="email"  placeholder="Enter email" /><br></td>
+</tr>
+<br>
+ <tr>
+ <td>Address</td>
+<td><fm:input path="address" type="text" name="address"  placeholder="Enter Address" /><br></td>
+</tr><br>
+<tr><td>
+<input type="submit" value="Submit"></td></tr>
+
+</table>
 </center>
 </fm:form>
 

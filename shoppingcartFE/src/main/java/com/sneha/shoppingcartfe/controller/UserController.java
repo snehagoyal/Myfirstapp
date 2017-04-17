@@ -1,7 +1,10 @@
 package com.sneha.shoppingcartfe.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,6 +28,7 @@ public class UserController {
 	public ModelAndView register(@ModelAttribute("user") User u)
 	{
 		ModelAndView mv=new ModelAndView("/home");
+		
 		userService.addUser(u);
 		return mv;
 	}
