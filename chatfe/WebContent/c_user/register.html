@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js"></script></head>
+<script type="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+
+
+</head>
+<body>
+<table>
+<div ng-app="myApp" ng-controller= "UserController as ctrl">
+<form novalidate>
+<div class="formcontainer">
+
+<label>User Registration Form</label>
+<input type="radio" ng-model="ctrl.user.role" value="Student">Student
+<input type="radio" ng-model="ctrl.user.role" value="Alumni">Alumni
+<input type="radio" ng-model="ctrl.user.role" value="Employee">Employee
+</div>
+<br><br>
+Firstname<br><input type="text" ng-model="ctrl.user.firstname" placeholder="Enter your firstname"><br>
+LastName<br><input type="text" ng-model="ctrl.user.lastname" placeholder="enter your lastname"><br>
+
+Password<br><input type="text" ng-model="ctrl.user.password" placeholder="enter your password"><br>
+Address<br><input type="text" ng-model="ctrl.user.address"placeholder="enter your address"><br>
+Email<br><input type="email" ng-model="ctrl.user.email" placeholder="enter your email"><br>
+Contact No.<br><input type="number" ng-model="ctrl.user.number" placeholder="enter your contact number"><br>
+<br>
+
+<button ng-click="register">Submit</button>
+<button ng-click="reset"> Reset </button>
+</form>
+
+</table>
+</div>
+</body>
+</html>
